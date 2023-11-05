@@ -1,5 +1,5 @@
 export default {
-  // more father 4 config: https://github.com/umijs/father-next/blob/master/docs/config.md
+  // more father 4 config:   https://github.com/umijs/father/blob/master/docs/config.md
   esm: {
     output:'es'
   },
@@ -15,6 +15,12 @@ export default {
         commonjs:'mapbox-gl',
         commonjs2:'mapbox-gl',
         amd:'mapbox-gl',
+      },
+      "maplibre-gl":{
+        root:'maplibregl',
+        commonjs:'maplibre-gl',
+        commonjs2:'maplibre-gl',
+        amd:'maplibre-gl',
       },
     },
   },

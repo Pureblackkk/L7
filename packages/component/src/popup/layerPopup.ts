@@ -74,7 +74,12 @@ export default class LayerPopup extends Popup<ILayerPopupOption> {
 
   public setOptions(option: Partial<ILayerPopupOption>) {
     this.unbindLayerEvent();
-    super.setOptions(option);
+    const newOption = { ...option };
+    const trigger = option.trigger || this.popupOption.trigger;
+    if (newOption.items?.length === 0 && trigger === 'hover') {
+      newOption.followCursor = false;
+    }
+    super.setOptions(newOption);
     this.bindLayerEvent();
     return this;
   }
@@ -132,7 +137,7 @@ export default class LayerPopup extends Popup<ILayerPopupOption> {
         }
       }
       const source = layer?.getSource?.();
-      const onSourceUpdate = this.onSourceUpdate.bind(this, layer);
+      const onSourceUpdate = this.onSourceUpdate.bind(this);
       source?.on('update', onSourceUpdate);
       layerInfo.onSourceUpdate = onSourceUpdate;
 
@@ -222,7 +227,7 @@ export default class LayerPopup extends Popup<ILayerPopupOption> {
     });
   };
 
-  protected onSourceUpdate(layer: ILayer) {
+  protected onSourceUpdate() {
     this.hide();
     this.displayFeatureInfo = undefined;
   }

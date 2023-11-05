@@ -1,6 +1,6 @@
 {
   "name": "@antv/l7",
-  "version": "2.19.6",
+  "version": "2.19.9",
   "description": "A Large-scale WebGL-powered Geospatial Data Visualization",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -14,10 +14,10 @@
     "README.md"
   ],
   "scripts": {
-    "b": "father build",
     "tsc": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist; rimraf es; rimraf lib;",
     "build": "father build",
+    "build-dev": "COMPRESS=none father build",
     "build:cjs": "BABEL_ENV=cjs babel src --root-mode upward --out-dir lib --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments",
     "build:esm": "BABEL_ENV=esm babel src --root-mode upward --out-dir es --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments",
     "watch": "BABEL_ENV=cjs babel src --watch --root-mode upward --out-dir lib --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments",
@@ -26,13 +26,13 @@
   "author": "antv",
   "license": "MIT",
   "dependencies": {
-    "@antv/l7-component": "2.19.6",
-    "@antv/l7-core": "2.19.6",
-    "@antv/l7-layers": "2.19.6",
-    "@antv/l7-maps": "2.19.6",
-    "@antv/l7-scene": "2.19.6",
-    "@antv/l7-source": "2.19.6",
-    "@antv/l7-utils": "2.19.6",
+    "@antv/l7-component": "2.19.9",
+    "@antv/l7-core": "2.19.9",
+    "@antv/l7-layers": "2.19.9",
+    "@antv/l7-maps": "2.19.9",
+    "@antv/l7-scene": "2.19.9",
+    "@antv/l7-source": "2.19.9",
+    "@antv/l7-utils": "2.19.9",
     "@babel/runtime": "^7.7.7",
     "webpack-bundle-analyzer": "^4.9.1"
   },
